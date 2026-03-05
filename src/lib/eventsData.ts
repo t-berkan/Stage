@@ -1,7 +1,3 @@
-import eventPortesOuvertes from "@/assets/event-portes-ouvertes.jpg";
-import eventMarathon from "@/assets/event-marathon.jpg";
-import eventComex from "@/assets/event-comex.jpg";
-
 export interface EventNewsItem {
     id: string;
     title: string;
@@ -16,7 +12,7 @@ const initialItems: EventNewsItem[] = [
     {
         id: "1",
         title: "JOURNÉE\nPORTES OUVERTES",
-        image: eventPortesOuvertes,
+        image: "https://misterprepa.net/wp-content/uploads/2024/06/Rennes-School-of-Business-une-ecole-qui-monte.png",
         type: "events",
         variant: "primary",
         createdAt: Date.now() - 1000000,
@@ -25,7 +21,7 @@ const initialItems: EventNewsItem[] = [
         id: "2",
         title: "LE MARATHON VERT 2024",
         subtitle: "RETOUR SUR",
-        image: eventMarathon,
+        image: "https://misterprepa.net/wp-content/uploads/2024/06/Rennes-School-of-Business-une-ecole-qui-monte.png",
         type: "events",
         variant: "secondary",
         createdAt: Date.now() - 2000000,
@@ -33,7 +29,7 @@ const initialItems: EventNewsItem[] = [
     {
         id: "3",
         title: "JUNIOR COMEX: DES ÉTUDIANTS\nINTÈGRENT LE COMEX DE\nRENNES SCHOOL OF BUSINESS",
-        image: eventComex,
+        image: "https://misterprepa.net/wp-content/uploads/2024/06/Rennes-School-of-Business-une-ecole-qui-monte.png",
         type: "events",
         variant: "tertiary",
         createdAt: Date.now() - 3000000,
