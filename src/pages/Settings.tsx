@@ -154,9 +154,9 @@ const Settings = () => {
     return (
         <MainLayout>
             <div className="w-full h-full animate-fade-in relative flex items-center justify-center">
-                <div className="flex w-full h-full">
+                <div className="flex flex-col md:flex-row w-full h-full overflow-y-auto md:overflow-y-hidden pb-20 md:pb-0">
                     {/* Settings Sidebar */}
-                    <div className="w-full md:w-64 space-y-6 absolute top-0 md:top-4 left-4 lg:left-8 z-10">
+                    <div className="w-full md:w-64 space-y-6 relative md:absolute top-0 md:top-4 left-0 md:left-4 lg:left-8 z-10 mb-8 md:mb-0 shrink-0">
                         <h1 className="text-3xl font-bold text-navy">Paramètres</h1>
                         <div className="space-y-2">
                             <button
@@ -197,7 +197,7 @@ const Settings = () => {
                     </div>
 
                     {/* Settings Content */}
-                    <div className="flex w-full h-full items-center justify-center">
+                    <div className="flex w-full md:h-full items-start md:items-center justify-center pt-0 md:pt-0">
                         <div className="w-full max-w-2xl space-y-6 relative z-0">
                             {activeTab === "compte" && (
                                 <Card className="p-6 md:p-8 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white animate-fade-in">

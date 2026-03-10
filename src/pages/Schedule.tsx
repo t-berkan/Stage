@@ -158,12 +158,12 @@ const Schedule = () => {
         />
 
         {canEditSchedule && (
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-0 mb-4 w-full">
             <h2 className="text-lg font-semibold text-navy">Filtres Admin</h2>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3 w-full md:w-auto">
               <Select value={selectedRoom} onValueChange={setSelectedRoom}>
-                <SelectTrigger className="w-[200px] bg-white border-gray-200">
-                  <SelectValue placeholder="Toutes les salles" />
+                <SelectTrigger className="w-[140px] md:w-[200px] bg-white border-gray-200">
+                  <SelectValue placeholder="Salles" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Toutes les salles</SelectItem>
@@ -172,9 +172,9 @@ const Schedule = () => {
                   ))}
                 </SelectContent>
               </Select>
-              <Button onClick={() => setIsAddModalOpen(true)} className="bg-navy hover:bg-navy-light text-white gap-2">
-                <Plus className="w-4 h-4" />
-                Ajouter un cours
+              <Button onClick={() => setIsAddModalOpen(true)} className="bg-navy hover:bg-navy-light text-white gap-1 md:gap-2 px-3 md:px-4 flex-1 md:flex-none">
+                <Plus className="w-4 h-4 shrink-0" />
+                <span className="text-xs md:text-sm">Ajouter un cours</span>
               </Button>
             </div>
           </div>

@@ -203,7 +203,7 @@ const AdminDashboard = () => {
         <MainLayout>
             <div className="max-w-6xl mx-auto py-8 lg:px-4 animate-fade-in h-full overflow-y-auto pr-2 pb-24 custom-scrollbar">
 
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 mb-8">
                     <div>
                         <h1 className="text-3xl font-bold text-navy">Panneau d'Administration</h1>
                         <p className="text-gray-500 mt-1">Gérez les comptes étudiants et l'accès à la plateforme.</p>

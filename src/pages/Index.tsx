@@ -9,19 +9,19 @@ const Index = () => {
 
   return (
     <MainLayout>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-0 animate-fade-in h-full">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-10 pb-20 md:pb-0 animate-fade-in h-full overflow-y-auto md:overflow-y-hidden">
         {/* Left column - Next courses */}
-        <div className="md:col-span-3 h-full">
+        <div className="md:col-span-3 h-auto md:h-full shrink-0">
           <NextCourses />
         </div>
 
         {/* Middle column - Events */}
-        <div className="md:col-span-5 ml-2">
+        <div className="md:col-span-5 md:ml-2 shrink-0">
           <EventsSection />
         </div>
 
         {/* Right column - Welcome panel */}
-        <div className="md:col-span-4">
+        <div className="md:col-span-4 shrink-0">
           {showWelcome && (
             <WelcomePanel onClose={() => setShowWelcome(false)} />
           )}

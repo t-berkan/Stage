@@ -439,10 +439,10 @@ export default function Studies() {
           </Button>
         </div>
 
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex justify-between items-center">
+        <div className="bg-white p-4 md:p-6 rounded-xl border border-gray-100 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-0">
           <div>
-            <h2 className="text-2xl font-bold text-navy">{selectedModule.name}</h2>
-            <p className="text-gray-500 mt-1">Gérez les notes et évaluations des élèves de cette classe.</p>
+            <h2 className="text-xl md:text-2xl font-bold text-navy">{selectedModule.name}</h2>
+            <p className="text-gray-500 mt-1 text-sm md:text-base">Gérez les notes et évaluations des élèves de cette classe.</p>
           </div>
           <Badge className="bg-pink text-white">{selectedModule.code}</Badge>
         </div>
@@ -608,9 +608,9 @@ export default function Studies() {
         </Dialog>
 
         <div className="mt-12">
-          <div className="flex justify-between items-center mb-4 border-b border-gray-100 pb-2">
-            <h3 className="text-xl font-semibold text-navy">Devoirs & Évaluations</h3>
-            <div className="flex gap-2">
+          <div className="flex justify-between items-center mb-4 border-b border-gray-100 pb-2 gap-2">
+            <h3 className="text-xl font-semibold text-navy leading-tight">Devoirs & Évaluations</h3>
+            <div className="flex gap-1.5 md:gap-2 shrink-0">
               <Button
                 variant="outline"
                 size="sm"
@@ -621,14 +621,16 @@ export default function Studies() {
                     toast({ title: "Stockage vidé", description: "Tous les anciens rendus ont été supprimés." });
                   }
                 }}
-                className="text-gray-500 hover:text-red-500 hover:bg-red-50 border-gray-200"
+                className="text-gray-500 hover:text-red-500 hover:bg-red-50 border-gray-200 px-2 md:px-3"
+                title="Vider le stockage"
               >
-                <Trash2 className="w-4 h-4 mr-2" />
-                Vider le stockage
+                <Trash2 className="w-4 h-4 md:mr-2" />
+                <span className="hidden md:inline">Vider le stockage</span>
               </Button>
-              <Button size="sm" onClick={() => handleOpenEvalModal()} className="bg-navy hover:bg-navy-light text-white gap-2">
+              <Button size="sm" onClick={() => handleOpenEvalModal()} className="bg-navy hover:bg-navy-light text-white gap-1 md:gap-2 px-2 md:px-3">
                 <Plus className="w-4 h-4" />
-                Nouveau Devoir
+                <span className="hidden md:inline">Nouveau Devoir</span>
+                <span className="inline md:hidden text-xs">Nouveau</span>
               </Button>
             </div>
           </div>

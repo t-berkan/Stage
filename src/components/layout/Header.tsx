@@ -77,7 +77,7 @@ export function Header() {
   const hasUnread = notifications.some(n => !n.isRead);
 
   return (
-    <header className="flex items-center justify-between py-5 pl-6 md:pl-10 pr-0 bg-transparent">
+    <header className="flex items-center justify-between py-5 pl-2 md:pl-6 lg:pl-10 pr-2 md:pr-0 bg-transparent">
       <div className="flex items-center gap-4">
         <Avatar className="w-12 h-12 border-[3px] border-white dark:border-navy shadow-sm bg-gray-100 dark:bg-gray-800">
           {userAvatar ? (

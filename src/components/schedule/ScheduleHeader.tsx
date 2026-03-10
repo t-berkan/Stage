@@ -48,24 +48,26 @@ export function ScheduleHeader({
   };
 
   return (
-    <div className="flex items-center justify-between mb-4">
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-4 md:gap-0">
       {/* Left: Month + Today button + Navigation */}
-      <div className="flex items-center gap-3">
-        <h1 className="text-base font-semibold text-navy capitalize min-w-[140px]">{formatMonth()}</h1>
+      <div className="flex flex-wrap items-center gap-2 md:gap-3 w-full md:w-auto">
+        <h1 className="text-base font-semibold text-navy capitalize min-w-[100px] md:min-w-[140px]">{formatMonth()}</h1>
 
         <div className="flex items-center gap-1">
           <Button
             variant="outline"
             size="sm"
             onClick={onToday}
-            className="text-xs font-medium h-7 px-3 border-gray-300 rounded-lg text-gray-600 mr-1"
+            className="text-xs font-medium h-7 px-2 md:px-3 border-gray-300 rounded-lg text-gray-600 mr-1"
+            title="Aujourd'hui"
           >
-            Aujourd'hui
+            <span className="hidden md:inline">Aujourd'hui</span>
+            <span className="inline md:hidden">Auj.</span>
           </Button>
-          <Button variant="outline" size="icon" className="h-7 w-7 border-gray-300" onClick={onPrevious}>
+          <Button variant="outline" size="icon" className="h-7 w-7 border-gray-300 shrink-0" onClick={onPrevious}>
             <ChevronLeft className="h-4 w-4 text-gray-600" />
           </Button>
-          <Button variant="outline" size="icon" className="h-7 w-7 border-gray-300" onClick={onNext}>
+          <Button variant="outline" size="icon" className="h-7 w-7 border-gray-300 shrink-0" onClick={onNext}>
             <ChevronRight className="h-4 w-4 text-gray-600" />
           </Button>
         </div>
@@ -75,10 +77,11 @@ export function ScheduleHeader({
             <Button
               variant={"outline"}
               size="sm"
-              className="h-7 border-gray-300 text-gray-600 font-normal"
+              className="h-7 border-gray-300 text-gray-600 font-normal px-2 md:px-3"
+              title="Choisir une date"
             >
-              <CalendarIcon className="mr-2 h-3.5 w-3.5" />
-              Choisir une date
+              <CalendarIcon className="md:mr-2 h-3.5 w-3.5" />
+              <span className="hidden md:inline">Choisir une date</span>
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
@@ -93,14 +96,14 @@ export function ScheduleHeader({
       </div>
 
       {/* Right: View tabs + Date range */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 md:gap-3 w-full md:w-auto mt-1 md:mt-0">
         <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg p-0.5">
           {(["Day", "Week", "Month"] as const).map((v) => (
             <button
               key={v}
               onClick={() => onViewChange(v.toLowerCase() as "day" | "week" | "month")}
               className={cn(
-                "px-3 py-1 text-xs font-medium rounded-md transition-all",
+                "px-2 md:px-3 py-1 text-[10px] md:text-xs font-medium rounded-md transition-all",
                 view === v.toLowerCase()
                   ? "bg-white text-navy shadow-sm"
                   : "text-gray-400 hover:text-navy"
@@ -111,7 +114,7 @@ export function ScheduleHeader({
           ))}
         </div>
 
-        <div className="border border-gray-200 rounded-lg px-3 py-1 text-xs font-medium text-navy bg-white min-w-[140px] text-center">
+        <div className="border border-gray-200 rounded-lg px-2 md:px-3 py-1 text-[10px] md:text-xs font-medium text-navy bg-white min-w-[120px] md:min-w-[140px] text-center grow md:grow-0">
           {formatDateRange()}
         </div>
       </div>
