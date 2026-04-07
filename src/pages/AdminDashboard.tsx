@@ -201,60 +201,61 @@ const AdminDashboard = () => {
 
     return (
         <MainLayout>
-            <div className="max-w-6xl mx-auto py-8 lg:px-4 animate-fade-in h-full overflow-y-auto pr-2 pb-24 custom-scrollbar">
+            <div className="w-full h-full overflow-y-auto custom-scrollbar">
+                <div className="max-w-[1600px] mx-auto py-10 px-4 md:px-8 lg:px-12 animate-fade-in pb-24 space-y-10">
 
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 mb-8">
-                    <div>
-                        <h1 className="text-3xl font-bold text-navy">Panneau d'Administration</h1>
-                        <p className="text-gray-500 mt-1">Gérez les comptes étudiants et l'accès à la plateforme.</p>
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0">
+                        <div>
+                            <h1 className="text-3xl font-bold text-navy">Panneau d'Administration</h1>
+                            <p className="text-gray-500 mt-1">Gérez les comptes étudiants et l'accès à la plateforme.</p>
+                        </div>
+                        <div className="flex items-center gap-3 bg-pink/10 px-4 py-2 rounded-xl border border-pink/20">
+                            <Users className="w-5 h-5 text-pink" />
+                            <span className="font-semibold text-navy">{studentCount} Étudiant{studentCount !== 1 ? 's' : ''} inscrits</span>
+                        </div>
                     </div>
-                    <div className="flex items-center gap-3 bg-pink/10 px-4 py-2 rounded-xl border border-pink/20">
-                        <Users className="w-5 h-5 text-pink" />
-                        <span className="font-semibold text-navy">{studentCount} Étudiant{studentCount !== 1 ? 's' : ''} inscrits</span>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-pink/10 flex items-center justify-center text-pink shrink-0">
+                                <Users className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-gray-500">Total Étudiants</p>
+                                <h3 className="text-2xl font-bold text-navy">{studentCount}</h3>
+                            </div>
+                        </Card>
+                        <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
+                                <GraduationCap className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-gray-500">Profs Actifs</p>
+                                <h3 className="text-2xl font-bold text-navy">{teacherCount}</h3>
+                            </div>
+                        </Card>
+                        <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                                <Calendar className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-gray-500">Cours Aujourd'hui</p>
+                                <h3 className="text-2xl font-bold text-navy">{todayCoursesCount}</h3>
+                            </div>
+                        </Card>
+                        <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 shrink-0">
+                                <Percent className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-gray-500">Taux Occupation</p>
+                                <h3 className="text-2xl font-bold text-navy">85%</h3>
+                            </div>
+                        </Card>
                     </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-pink/10 flex items-center justify-center text-pink shrink-0">
-                            <Users className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-gray-500">Total Étudiants</p>
-                            <h3 className="text-2xl font-bold text-navy">{studentCount}</h3>
-                        </div>
-                    </Card>
-                    <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
-                            <GraduationCap className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-gray-500">Profs Actifs</p>
-                            <h3 className="text-2xl font-bold text-navy">{teacherCount}</h3>
-                        </div>
-                    </Card>
-                    <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
-                            <Calendar className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-gray-500">Cours Aujourd'hui</p>
-                            <h3 className="text-2xl font-bold text-navy">{todayCoursesCount}</h3>
-                        </div>
-                    </Card>
-                    <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 shrink-0">
-                            <Percent className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-gray-500">Taux Occupation</p>
-                            <h3 className="text-2xl font-bold text-navy">85%</h3>
-                        </div>
-                    </Card>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Add User Form */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+                        {/* Add User Form */}
                     <Card className="p-6 border-none shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded-2xl bg-white h-fit">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-navy shrink-0">
@@ -511,6 +512,7 @@ const AdminDashboard = () => {
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
+                </div>
             </div>
         </MainLayout>
     );
